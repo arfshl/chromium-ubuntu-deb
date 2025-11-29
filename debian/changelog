@@ -1,3 +1,18 @@
+chromium (143.0.7499.40-0) UNRELEASED; urgency=high
+
+  * New upstream stable release.
+  * d/patches:
+    - fixes/headless-gn.patch: refresh.
+    - fixes/chromium-142-iwyu-field-form-data.patch: drop, merged upstream.
+    - disable/tests.patch: refresh.
+    - ungoogled/disable-privacy-sandbox.patch: sync from upstream.
+    - fixes/libpng-testonly.patch: add a workaround for a missing build target
+      that upstream forgot to include.
+    - trixie/rust-no-alloc-shim.patch: mark nightly feature 'no_mangle' as
+      unsafe to make rustc happy.
+
+ -- Andres Salomon <dilinger@debian.org>  Fri, 28 Nov 2025 19:23:49 -0500
+
 chromium (142.0.7444.175-1) unstable; urgency=high
 
   * New upstream security release.
