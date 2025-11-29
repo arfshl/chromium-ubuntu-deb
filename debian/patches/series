@@ -51,6 +51,7 @@ system/rollup.patch
 #trixie/libxml-parseerr.patch
 trixie/rust-no-alloc-shim.patch
 trixie/rust-sanitize.patch
+trixie/cookie-string-view.patch
 
 #bookworm/strlcpy.patch
 bookworm/gn-revert-path-exists.patch

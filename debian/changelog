@@ -10,6 +10,8 @@ chromium (143.0.7499.40-0) UNRELEASED; urgency=high
       that upstream forgot to include.
     - trixie/rust-no-alloc-shim.patch: mark nightly feature 'no_mangle' as
       unsafe to make rustc happy.
+    - trixie/cookie-string-view.patch: add a workaround for missing clang-19
+      feature.
 
  -- Andres Salomon <dilinger@debian.org>  Fri, 28 Nov 2025 19:23:49 -0500
 
