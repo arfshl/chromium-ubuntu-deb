@@ -1,4 +1,4 @@
-chromium (143.0.7499.146-1) unstable; urgency=high
+chromium (143.0.7499.169-1) unstable; urgency=high
 
   * New upstream security release.
     - CVE-2025-14765: Use after free in WebGPU. Reported by Anonymous.
@@ -12,7 +12,7 @@ chromium (143.0.7499.146-1) unstable; urgency=high
     wrapper to cover additional cases of non-emulated Python execution.
   * d/rules: Add a bug reference for the libffi issue.
 
- -- Andres Salomon <dilinger@debian.org>  Tue, 16 Dec 2025 22:58:49 -0500
+ -- Andres Salomon <dilinger@debian.org>  Fri, 19 Dec 2025 21:44:43 -0500
 
 chromium (143.0.7499.109-1) unstable; urgency=high
 
