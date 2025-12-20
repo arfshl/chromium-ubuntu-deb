@@ -4,6 +4,7 @@ chromium (143.0.7499.146-1) unstable; urgency=high
     - CVE-2025-14765: Use after free in WebGPU. Reported by Anonymous.
     - CVE-2025-14766: Out of bounds read and write in V8.
       Reported by Shaheen Fazim.
+  * d/rules: change (google-specific) upstream tarball url.
 
   [ Daniel Richard G. ]
   * d/control: Drop valgrind from Build-Depends:, as it appears unused.
