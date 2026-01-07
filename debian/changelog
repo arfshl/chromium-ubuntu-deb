@@ -1,3 +1,9 @@
+chromium (143.0.7499.169-2) UNRELEASED; urgency=high
+
+  * d/rules: enable verbose build logs (closes: #1111693).
+
+ -- Andres Salomon <dilinger@debian.org>  Fri, 19 Dec 2025 21:44:43 -0500
+
 chromium (143.0.7499.169-1) unstable; urgency=high
 
   [ Andres Salomon ]
