@@ -1,6 +1,8 @@
 chromium (143.0.7499.169-2) UNRELEASED; urgency=high
 
-  * d/rules: enable verbose build logs (closes: #1111693).
+  * d/rules:
+    - enable verbose build logs (closes: #1111693).
+    - disable thinLTO for rust (closes: #1124150).
 
  -- Andres Salomon <dilinger@debian.org>  Fri, 19 Dec 2025 21:44:43 -0500
 
