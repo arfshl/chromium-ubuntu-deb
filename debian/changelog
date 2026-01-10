@@ -3,7 +3,6 @@ chromium (144.0.7559.59-1) UNRELEASED; urgency=high
   * New upstream stable release.
   * d/copyright: delete a copy of clang-22 in the openscreen build directory.
   * d/control: add rustfmt as a build dependency.
-  * d/rules: set rustc_nightly_capability=true for current sid rust & adler2.
   * d/patches:
     - disable/tests.patch: refresh.
     - trixie/rust-sanitize.patch: refresh.
