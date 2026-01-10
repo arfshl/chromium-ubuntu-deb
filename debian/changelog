@@ -13,6 +13,12 @@ chromium (144.0.7559.59-1) UNRELEASED; urgency=high
     - trixie/skpoint-value-or.patch: add clang-19 workaround to help
       calling value_or().
 
+  [ Timothy Pearson ]
+  * d/patches/ppc64le:
+    - ppc64le/third_party/0002-regenerate-xnn-buildgn.patch: Regenerate from
+      upstream sources
+    - fixes/fix-clang-selection.patch: Drop due to upstream changes
+
  -- Andres Salomon <dilinger@debian.org>  Sat, 10 Jan 2026 04:39:05 -0500
 
 chromium (143.0.7499.192-1) unstable; urgency=high
