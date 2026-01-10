@@ -1,3 +1,20 @@
+chromium (144.0.7559.59-1) UNRELEASED; urgency=high
+
+  * New upstream stable release.
+  * d/copyright: delete a copy of clang-22 in the openscreen build directory.
+  * d/control: add rustfmt as a build dependency.
+  * d/rules: set rustc_nightly_capability=true for current sid rust & adler2.
+  * d/patches:
+    - disable/tests.patch: refresh.
+    - trixie/rust-sanitize.patch: refresh.
+    - bookworm/bindgen.patch: refresh.
+    - fixes/force-rust-nightly.patch: add workaround to force
+      rustc_nightly_capability, as we're using an up-to-date rust.
+    - trixie/skpoint-value-or.patch: add clang-19 workaround to help
+      calling value_or().
+
+ -- Andres Salomon <dilinger@debian.org>  Sat, 10 Jan 2026 04:39:05 -0500
+
 chromium (143.0.7499.192-1) unstable; urgency=high
 
   * New upstream security release.
