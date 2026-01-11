@@ -17,6 +17,8 @@ chromium (144.0.7559.59-1) UNRELEASED; urgency=high
   * d/patches/trixie/adler1.patch: Refresh to follow use of if-else.
 
   [ Timothy Pearson ]
+  * d/patches:
+    - trixie/nodejs-set-intersection.patch: avoid using node >=22 intersection
   * d/patches/ppc64le:
     - ppc64le/third_party/0002-regenerate-xnn-buildgn.patch: Regenerate from
       upstream sources
