@@ -10,8 +10,8 @@ chromium (144.0.7559.59-1) UNRELEASED; urgency=high
     - bookworm/bindgen.patch: refresh.
     - fixes/force-rust-nightly.patch: add workaround to force
       rustc_nightly_capability, as we're using an up-to-date rust.
-    - trixie/skpoint-value-or.patch: add clang-19 workaround to help
-      calling value_or().
+    - trixie/value-or.patch: add clang-19 workarounds to help
+      calling value_or() with ambiguous values.
 
   [ Timothy Pearson ]
   * d/patches/ppc64le:
