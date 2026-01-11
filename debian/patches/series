@@ -58,6 +58,7 @@ trixie/rust-no-alloc-shim.patch
 trixie/rust-sanitize.patch
 trixie/cookie-string-view.patch
 trixie/value-or.patch
+trixie/nodejs-set-intersection.patch
 
 #bookworm/strlcpy.patch
 bookworm/gn-revert-path-exists.patch

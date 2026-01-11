@@ -1,5 +1,5 @@
---- ../../NEW/chromium-144.0.7559.59/ui/webui/resources/tools/webui_eslint_plugin.js	2026-01-06 18:50:30.000000000 -0600
-+++ ui/webui/resources/tools/webui_eslint_plugin.js	2026-01-11 02:51:47.253924663 -0600
+--- a/ui/webui/resources/tools/webui_eslint_plugin.js
++++ b/ui/webui/resources/tools/webui_eslint_plugin.js
 @@ -368,8 +368,8 @@
          for (const tagName of tagNames) {
            const expectedImportedFilenames = getExpectedImportFilenames(tagName);
