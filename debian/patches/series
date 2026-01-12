@@ -26,6 +26,7 @@ fixes/armhf-no-thumb.patch
 fixes/armhf-icf.patch
 fixes/libpng-testonly.patch
 fixes/force-rust-nightly.patch
+fixes/autofill-binarypb.patch
 
 # Fixes upstream bug 464638992. We can drop it at v145.
 upstream/fix-rk3588-v4l2-av1-decoder.patch

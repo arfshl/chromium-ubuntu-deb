@@ -12,6 +12,8 @@ chromium (144.0.7559.59-1) UNRELEASED; urgency=high
       rustc_nightly_capability, as we're using an up-to-date rust.
     - trixie/value-or.patch: add clang-19 workarounds to help
       calling value_or() with ambiguous values.
+    - fixes/autofill-binarypb.patch: add patch to fix build for us stripping
+      out binary-only files containing city/state autofill aliases.
 
   [ Daniel Richard G. ]
   * d/patches/trixie/adler1.patch: Refresh to follow use of if-else.
