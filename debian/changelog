@@ -1,3 +1,15 @@
+chromium (144.0.7559.59-1.1) UNRELEASED; urgency=high
+
+  [ Daniel Richard G. ]
+  * d/patches/bookworm/bindgen.patch: Move the libclang edit from here ...
+  * d/patches/fixes/bindgen-paths.patch: ... over to this new patch, which
+    takes a simpler approach that is easier to override later in the series ...
+  * d/patches/ppc64le/fixes/bindgen.patch: ... and makes this patch redundant.
+  * d/patches/ppc64le/sandbox/0001-sandbox-Enable-seccomp_bpf-for-ppc64.patch:
+    Add a __NR_mseal definition that is needed in the Ubuntu builds.
+
+ -- Andres Salomon <dilinger@debian.org>  Tue, 13 Jan 2026 22:11:22 -0500
+
 chromium (144.0.7559.59-1) unstable; urgency=high
 
   [ Andres Salomon ]
