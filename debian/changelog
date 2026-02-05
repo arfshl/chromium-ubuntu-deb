@@ -1,6 +1,6 @@
-chromium (144.0.7559.132-1) unstable; urgency=high
+chromium (144.0.7559.109-2) unstable; urgency=high
 
-  * New upstream security release.
+  * Backport security fixes:
     - CVE-2026-1861: Heap buffer overflow in libvpx. Reported by Google.
     - CVE-2026-1862: Type Confusion in V8.
       Reported by Chaoyuan Peng (@ret2happy).
