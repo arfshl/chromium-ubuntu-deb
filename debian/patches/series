@@ -58,6 +58,7 @@ system/rollup.patch
 trixie/rust-no-alloc-shim.patch
 trixie/rust-sanitize.patch
 trixie/cookie-string-view.patch
+trixie/gn-string-hash.patch
 trixie/value-or.patch
 trixie/nodejs-set-intersection.patch
 
