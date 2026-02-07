@@ -2,8 +2,11 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
 
   * New upstream stable release.
   * d/copyright:
-    - delete third_party/litert/*, Google's new WebAI thing.
+    - delete third_party/litert/src, Google's new WebAI thing.
     - delete new rollup binary rollup-linux-x64-gnu.
+  * d/rules:
+    - build with webnn_use_tflite=false to fix build.
+    - disable building a bunch more unit tests.
   * d/patches:
     - CVE-2026-1861.patch: drop, merged upstream.
     - CVE-2026-1862.patch: drop, merged upstream.
@@ -19,6 +22,8 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
     - upstream/disable-unrar.patch: add upstream fix for disabling unrar.
     - trixie/gn-string-hash.patch: add a workaround for older gn missing
       string_hash() function.
+    - disable/enterprise-tests.patch: add patch to fix build error
+      related to building unnecessary unit tests.
 
  -- Andres Salomon <dilinger@debian.org>  Fri, 06 Feb 2026 19:15:37 -0500
 
