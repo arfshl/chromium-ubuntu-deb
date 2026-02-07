@@ -1,3 +1,24 @@
+chromium (145.0.7632.45-1) UNRELEASED; urgency=high
+
+  * New upstream stable release.
+  * d/copyright:
+    - delete third_party/litert/*, Google's new WebAI thing.
+    - delete new rollup binary rollup-linux-x64-gnu.
+  * d/patches:
+    - CVE-2026-1861.patch: drop, merged upstream.
+    - CVE-2026-1862.patch: drop, merged upstream.
+    - upstream/fix-rk3588-v4l2-av1-decoder.patch: drop, merged upstream.
+    - debianization/manpage.patch: refresh.
+    - debianization/rustc-bootstrap.patch: refresh.
+    - fixes/armhf-no-thumb.patch: rework patch due to upstream dropping
+      non-thumb.
+    - disable/tests.patch: refresh.
+    - disable/signin.patch: refresh.
+    - disable/catapult.patch: refresh.
+    - disable/widevine-cdm-cu.patch: refresh.
+
+ -- Andres Salomon <dilinger@debian.org>  Fri, 06 Feb 2026 19:15:37 -0500
+
 chromium (144.0.7559.109-2) unstable; urgency=high
 
   * Backport security fixes:
