@@ -29,6 +29,7 @@ fixes/force-rust-nightly.patch
 fixes/autofill-binarypb.patch
 fixes/bindgen-paths.patch
 
+upstream/disable-unrar.patch
 
 disable/tests.patch
 disable/tests-swiftshader.patch
