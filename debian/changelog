@@ -1,12 +1,16 @@
 chromium (145.0.7632.45-1) UNRELEASED; urgency=high
 
   * New upstream stable release.
+  * d/control: remove build-dep on rollup.
   * d/copyright:
     - delete third_party/litert/src, Google's new WebAI thing.
     - delete new rollup binary rollup-linux-x64-gnu.
+    - stop deleting the bundled rollup; debian's rollup is years out of
+      date at this point.
   * d/rules:
     - build with webnn_use_tflite=false to fix build.
     - disable building a bunch more unit tests.
+    - stop copying over the system rollup.
   * d/patches:
     - CVE-2026-1861.patch: drop, merged upstream.
     - CVE-2026-1862.patch: drop, merged upstream.

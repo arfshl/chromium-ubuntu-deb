@@ -37,7 +37,6 @@ Build-Depends:
  bison,
  nodejs:any,
  node-rollup-plugin-terser:native,
- rollup,
  xz-utils,
  xcb-proto,
  xfonts-base,
