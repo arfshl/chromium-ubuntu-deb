@@ -24,8 +24,6 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
       string_hash() function.
     - disable/enterprise-tests.patch: add patch to fix build error
       related to building unnecessary unit tests.
-    - system/rollup.patch: update for upstream's switch from rollup to
-      esbuild.
 
   [ Timothy Pearson ]
   * d/patches/ppc64le:
