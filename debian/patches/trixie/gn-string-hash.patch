@@ -36,7 +36,7 @@ ERROR at //build/rust/gni_impl/rust_target.gni:51:17: Unknown function.
 +import os
 +import sys
 +
-+os.system('printf "' + sys.argv[1] + '" | md5sum | cut -c 1-8')
++os.system('printf "' + sys.argv[1] + '" | sha256sum | cut -c 1-8')
 --- a/build/rust/rust_static_library.gni
 +++ b/build/rust/rust_static_library.gni
 @@ -187,7 +187,8 @@ template("rust_static_library") {
