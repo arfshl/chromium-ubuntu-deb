@@ -30,6 +30,7 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
       some rollup calls to esbuild and away from rollup-wasm.
     - ppc64le/third_party/0003-third_party-ffmpeg-Add-ppc64-generated-config.patch:
       refresh.
+    - llvm-19/static-assert.patch: add build fixes specific to clang-19.
 
   [ Timothy Pearson ]
   * d/patches/ppc64le:
