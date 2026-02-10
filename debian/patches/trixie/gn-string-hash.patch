@@ -15,7 +15,7 @@ ERROR at //build/rust/gni_impl/rust_target.gni:51:17: Unknown function.
    } else {
 -    _dir_hash = string_hash(get_label_info(":${_target_name}", "dir"))
 +    lbl = get_label_info(":${_target_name}", "dir")
-+    _dir_hash = exec_script("//stringhash.py", [ lbl ], "list lines")
++    _dir_hash = string_join("", exec_script("//stringhash.py", [ lbl ], "list lines"))
      _crate_name = "${_target_name}_${_dir_hash}"
    }
    _generate_crate_root =
@@ -45,7 +45,7 @@ ERROR at //build/rust/gni_impl/rust_target.gni:51:17: Unknown function.
        } else {
 -        _dir_hash = string_hash(get_label_info(":${_target_name}", "dir"))
 +        lbl = get_label_info(":${_target_name}", "dir")
-+        _dir_hash = exec_script("//stringhash.py", [ lbl ], "list lines")
++        _dir_hash = string_join("", exec_script("//stringhash.py", [ lbl ], "list lines"))
          _crate_name = "${_target_name}_${_dir_hash}"
        }
  
