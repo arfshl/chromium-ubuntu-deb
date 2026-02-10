@@ -66,6 +66,7 @@ Build-Depends:
  libflac-dev,
  libudev-dev,
  libpipewire-0.3-dev,
+ libpthreadpool-dev,
  libopus-dev,
  libxtst-dev,
  libjpeg-dev,
