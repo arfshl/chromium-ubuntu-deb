@@ -198,7 +198,16 @@ test_armhf_neon:
 		}; \
 	fi
 
-override_dh_auto_configure: test_armhf_neon
+ESVERS=0.25.1-1
+set_up_esbuild:
+	# Esbuild binary version should match the libs in chromium. This uses
+	# esbuild packages from
+	# https://snapshot.debian.org/package/golang-github-evanw-esbuild/$(ESVERS)/
+	mkdir -p debian/esbuild/root
+	ar --output debian/esbuild/root vx debian/esbuild/esbuild_$(ESVERS)_$(DEB_HOST_ARCH).deb
+	tar -C debian/esbuild/root -Jxvf debian/esbuild/root/data.tar.xz
+
+override_dh_auto_configure: test_armhf_neon set_up_esbuild
 	# verify that we're not accidentally uploading to stable-security without CVEs
 	@echo "$(DIST)" | grep -q -- '-security' && { \
 		dpkg-parsechangelog -l debian/changelog | grep -q 'CVE-' || { \
@@ -212,6 +221,9 @@ override_dh_auto_configure: test_armhf_neon
 	# use system rollup
 	cp -ra /usr/share/nodejs/rollup third_party/node/node_modules/
 	- test -L third_party/devtools-frontend/src/node_modules/rollup3 || ln -s /usr/share/nodejs/rollup third_party/devtools-frontend/src/node_modules/rollup3
+	# use bundled esbuild
+	mkdir -p third_party/devtools-frontend/src/third_party/esbuild
+	cp debian/esbuild/root/usr/bin/esbuild third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	# output compiler information
 	$(CXX) --version
 	# prefer unbundled (system) libraries
@@ -246,6 +258,8 @@ override_dh_fixperms:
 	dh_fixperms --exclude chrome-sandbox
 
 override_dh_auto_clean:
+	rm -rf debian/esbuild/root
+	rm -f third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	rm -rf third_party/node/linux/node-linux-x64
 	rm -rf out
 	rm -rf third_party/node/node_modules/rollup
