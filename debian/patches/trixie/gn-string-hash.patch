@@ -32,11 +32,13 @@ ERROR at //build/rust/gni_impl/rust_target.gni:51:17: Unknown function.
      "//build/config/linux/dri/BUILD.gn",
 --- /dev/null
 +++ b/stringhash.py
-@@ -0,0 +1,4 @@
-+import os
+@@ -0,0 +1,6 @@
++# string_hash() implementation for older versions of gn
++
++import hashlib
 +import sys
 +
-+os.system('printf "' + sys.argv[1] + '" | sha256sum | cut -c 1-8')
++print(hashlib.sha256(sys.argv[1].encode('UTF-8')).hexdigest()[:8])
 --- a/build/rust/rust_static_library.gni
 +++ b/build/rust/rust_static_library.gni
 @@ -187,7 +187,8 @@ template("rust_static_library") {
