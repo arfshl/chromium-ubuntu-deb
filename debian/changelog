@@ -29,6 +29,7 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
     - system/rollup.patch: update for upstream changes around switching
       some rollup calls to esbuild and away from rollup-wasm.
     - llvm-19/static-assert.patch: add build fixes specific to clang-19.
+    - disable/unrar.patch: add another build fix for deleting unrar.
 
   [ Timothy Pearson ]
   * d/patches/ppc64le:
