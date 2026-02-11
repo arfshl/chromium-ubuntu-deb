@@ -3,12 +3,15 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
   * New upstream stable release.
   * d/copyright:
     - delete third_party/litert/src, Google's new WebAI thing.
+    - delete esbuild directory so we can use debian's esbuild.
     - delete new rollup binary rollup-linux-x64-gnu.
   * d/rules:
     - build with webnn_use_tflite=false to fix build.
     - disable building a bunch more unit tests.
+    - copy esbuild libs and binary from the system.
   * d/control:
     - build-dep on libpthreadpool-dev.
+    - build-dep on esbuild.
   * d/patches:
     - CVE-2026-1861.patch: drop, merged upstream.
     - CVE-2026-1862.patch: drop, merged upstream.
