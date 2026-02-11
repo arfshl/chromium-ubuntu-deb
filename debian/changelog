@@ -32,6 +32,9 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
     - disable/unrar.patch: add another build fix for deleting unrar.
 
   [ Timothy Pearson ]
+  * d/patches:
+    - patches/fixes/swiftshader-dependencies.patch: Fix SwiftShader include
+      dependencies
   * d/patches/ppc64le:
     - ppc64le/third_party/0001-Add-PPC64-support-for-boringssl.patch: Remove
       obsolete Clang 7 workaround
