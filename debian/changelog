@@ -80,6 +80,10 @@ chromium (145.0.7632.45-1) UNRELEASED; urgency=high
       update for upstream changes.
     - loongarch64/0016-medium-cmodel-support-for-loongarch64.patch: refresh.
 
+  [ Daniel Richard G. ]
+  * d/patches/disable/rustc-allow-features.patch: Zap the -Zallow-features=
+    flag so that Rust doesn't complain about our compatibility workarounds.
+
  -- Andres Salomon <dilinger@debian.org>  Fri, 06 Feb 2026 19:15:37 -0500
 
 chromium (144.0.7559.109-2) unstable; urgency=high
