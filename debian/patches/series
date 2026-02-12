@@ -69,6 +69,7 @@ trixie/cookie-string-view.patch
 trixie/gn-string-hash.patch
 trixie/value-or.patch
 trixie/nodejs-set-intersection.patch
+#trixie/nodejs-main.patch
 
 #bookworm/strlcpy.patch
 bookworm/gn-revert-path-exists.patch
