@@ -1,3 +1,13 @@
+chromium (145.0.7632.109-1) unstable; urgency=high
+
+  * New upstream security release.
+    - CVE-2026-2648: Heap buffer overflow in PDFium. Reported by soiax.
+    - CVE-2026-2649: Integer overflow in V8.
+      Reported by JunYoung Park(@candymate) of KAIST Hacking Lab.
+    - CVE-2026-2650: Heap buffer overflow in Media. Reported by Google.
+
+ -- Andres Salomon <dilinger@debian.org>  Wed, 18 Feb 2026 16:22:12 -0500
+
 chromium (145.0.7632.75-1) unstable; urgency=high
 
   * New upstream security release.
