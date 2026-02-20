@@ -1,3 +1,9 @@
+chromium (145.0.7632.109-2) UNRELEASED; urgency=high
+
+  * d/rules: drop CVE check for security-uploads (no functional change).
+
+ -- Andres Salomon <dilinger@debian.org>  Wed, 18 Feb 2026 16:22:12 -0500
+
 chromium (145.0.7632.109-1) unstable; urgency=high
 
   * New upstream security release.
