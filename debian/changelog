@@ -1,6 +1,8 @@
 chromium (145.0.7632.109-2) UNRELEASED; urgency=high
 
   * d/rules: drop CVE check for security-uploads (no functional change).
+  * d/patches/disable/glic.patch: add a patch to fix build with disabled
+    Gemini Live in Chrome (glic).
 
  -- Andres Salomon <dilinger@debian.org>  Wed, 18 Feb 2026 16:22:12 -0500
 
