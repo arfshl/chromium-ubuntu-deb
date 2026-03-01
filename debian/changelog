@@ -1,3 +1,13 @@
+chromium (145.0.7632.116-1.1) UNRELEASED; urgency=high
+
+  [ Daniel Richard G. ]
+  * Re-bundle libxslt, to fix crashes due to an ABI incompatibility between
+    the bundled libxml2 and the system libxml2 used by the system libxslt.
+    - d/clean, d/control, d/copyright: Remove libxslt references.
+    - d/scripts/unbundle: Add entry for libxslt.
+
+ -- Andres Salomon <dilinger@debian.org>  Wed, 25 Feb 2026 22:14:31 -0500
+
 chromium (145.0.7632.116-1) unstable; urgency=high
 
   * New upstream security release.
