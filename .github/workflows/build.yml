@@ -34,7 +34,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git commit -m "Drop Debian master_preferences to keep Chromium stock" || true
-        git push origin ubuntu --force-with-lease
+        git push origin ubuntu --force-with-lease || true
     - name : Build Source Package
       run: |
         # Config SSH
