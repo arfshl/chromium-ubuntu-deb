@@ -38,10 +38,11 @@ jobs:
         git push origin ubuntu --force
     - name : Build Source Package
       run: |
+        set -x
         # Config SSH
         mkdir -p ~/.ssh
         echo "${SSHKEY_PRIV}" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
+        sudo chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H launchpad.net >> ~/.ssh/known_hosts
         # config PGP
         echo "$GPG_KEY" | gpg --batch --import
