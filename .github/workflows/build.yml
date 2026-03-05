@@ -44,12 +44,12 @@ jobs:
         ssh-keyscan launchpad.net >> ~/.ssh/known_hosts
         # config PGP
         echo "$GPG_KEY" | gpg --batch --import
-        echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
-        echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
         # Start Build
         git checkout ubuntu
-        debuild -S -sa -k$GPG_SEC
+        debuild -S -sa -k$GPG_SEC -p'gpg --batch --passphrase $GPG_PASS --pinentry-mode loopback'
         dput ppa:arfshl/chromium-ubuntu-deb  ../chromium_*.changes
       env: 
         GPG_KEY: ${{ secrets.GPG_KEY }}
+        GPG_PASS: ${{ secrets.GPG_KEY }}
+        GPG_SEC: ${{ secrets.GPG_SEC }}
         SSHKEY_PRIV: ${{ secrets.SSHKEY_PRIV }}
