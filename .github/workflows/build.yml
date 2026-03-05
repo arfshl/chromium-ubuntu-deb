@@ -50,7 +50,7 @@ jobs:
         # Start Build
         git checkout ubuntu
         # debmake -y
-        yes | debuild -S -sa -k"${GPG_SEC}" -p"gpg --batch --passphrase ${GPG_PASS} --pinentry-mode loopback" | yes
+        yes | debuild -S -d -sa -k"${GPG_SEC}" -p"gpg --batch --passphrase ${GPG_PASS} --pinentry-mode loopback"
         # gbp buildpackage -S -sa \
         # --git-gpg-args="--batch --passphrase ${GPG_PASS} --pinentry-mode loopback" \
         # --git-keyid="${GPG_SEC}" \
