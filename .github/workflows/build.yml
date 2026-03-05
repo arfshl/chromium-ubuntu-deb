@@ -17,20 +17,37 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install depedencies
       run: |
-        sudo apt install git devscripts build-essential debhelper dh-make pbuilder fakeroot lintian sbuild
-    - name: Fetch Chromium Debian Source
+        sudo apt install git devscripts build-essential debhelper dh-make pbuilder fakeroot lintian sbuild dput gnupg
+    - name: Fetch Chromium Debian Source, Apply patches
       run: |
+        # Fetch Chromium Debian Source, and create our own branches (debian for stock, ubuntu for modifications)
         git init
         git remote add upstream https://salsa.debian.org/chromium-team/chromium.git
         git fetch upstream master
         git checkout -B debian upstream/master
-        git push origin debian --force
-    - name: Commit and push changes
+        git push origin debian --force-with-lease
+        git checkout debian
+        git checkout -B ubuntu
+        # delete the master_preferences
+        git checkout ubuntu
+        git rm -f debian/etc/master_preferences || true
+        git commit -m "Drop Debian master_preferences to keep Chromium stock"
+        git push origin ubuntu --force-with-lease
+    - name : Build Source Package
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Auto-build"
-        git push
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Config SSH
+        mkdir -p ~/.ssh
+        echo "$SSHKEY_PRIV" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan launchpad.net >> ~/.ssh/known_hosts
+        # config PGP
+        echo "$GPG_KEY" | gpg --batch --import
+        echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+        echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+        # Start Build
+        git checkout ubuntu
+        debuild -S -sa -k$GPG_SEC
+        dput ppa:arfshl/chromium-ubuntu-deb  ../chromium_*.changes
+      env: 
+        GPG_KEY: ${{ secrets.GPG_KEY }}
+        SSHKEY_PRIV: ${{ secrets.SSHKEY_PRIV }}
