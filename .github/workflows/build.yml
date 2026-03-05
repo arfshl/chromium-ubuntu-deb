@@ -22,7 +22,6 @@ jobs:
       run: |
         git init
         git remote add upstream https://salsa.debian.org/chromium-team/chromium.git
-        git remote add origin https://github.com/arfshl/chromium-ubuntu-deb.git
         git fetch upstream master
         git push origin upstream/master:debian --force
     - name: Commit and push changes
