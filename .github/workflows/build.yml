@@ -41,7 +41,7 @@ jobs:
         set -x
         # Config SSH
         mkdir -p ~/.ssh
-        echo "${SSHKEY_PRIV}" > ~/.ssh/id_ed25519
+        printf "%s\n" "${SSHKEY_PRIV}" > ~/.ssh/id_ed25519
         sudo chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H launchpad.net >> ~/.ssh/known_hosts
         # config PGP
