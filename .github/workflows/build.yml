@@ -20,7 +20,11 @@ jobs:
         sudo apt install git devscripts build-essential debhelper dh-make pbuilder fakeroot lintian sbuild
     - name: Fetch Chromium Debian Source
       run: |
-        git clone --single-branch --branch master https://salsa.debian.org/chromium-team/chromium.git
+        git init
+        git remote add upstream https://salsa.debian.org/chromium-team/chromium.git
+        git remote add origin https://github.com/arfshl/chromium-ubuntu-deb.git
+        git fetch upstream master
+        git push origin upstream/master:debian --force
     - name: Commit and push changes
       run: |
         git config user.name "github-actions[bot]"
