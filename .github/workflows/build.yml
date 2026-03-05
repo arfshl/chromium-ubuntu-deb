@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install depedencies
       run: |
-        sudo apt install git devscripts build-essential debhelper dh-make pbuilder fakeroot lintian sbuild dput gnupg git-buildpackage
+        sudo apt install git devscripts build-essential debhelper dh-make pbuilder fakeroot lintian sbuild dput gnupg git-buildpackage debmake -y
     - name: Fetch Chromium Debian Source, Apply patches
       run: |
         # Fetch Chromium Debian Source, and create our own branches (debian for stock, ubuntu for modifications)
