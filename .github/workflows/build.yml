@@ -33,7 +33,7 @@ jobs:
         git rm -f debian/etc/master_preferences || true
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git commit -m "Drop Debian master_preferences to keep Chromium stock"
+        git commit -m "Drop Debian master_preferences to keep Chromium stock" || true
         git push origin ubuntu --force-with-lease
     - name : Build Source Package
       run: |
